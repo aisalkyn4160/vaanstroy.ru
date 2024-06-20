@@ -1,0 +1,213 @@
+.header{
+    height: 175px;
+}
+.header.open{
+    height: 100vh;
+}
+.header-top{
+    background: rgba(38, 36, 31, 1);
+    padding: 17px 0px;
+    font-size: 14px;
+    color:#FFF;
+}
+
+.contact-list{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.contact-list a{
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+.contact-list a span{
+    border-bottom: 1px dashed transparent;
+    transition: all .5s ease;
+}
+
+.contact-list a:hover span{
+    border-bottom: 1px dashed  rgba(255, 252, 252, 1);
+    
+}
+.message-block{
+    display: flex;
+    gap: 39px;
+}
+
+.header-bottom {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+.header-bottom .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-logo{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.header-logo p{
+    max-width: 339px;
+    padding-left: 8px;
+    padding-right: 15px;
+    color: rgba(19, 19, 19, 1);
+    font-weight: 600;
+}
+
+.header-bottom .nav-menu{
+    height: 100%;
+    
+}
+.header-bottom .nav-menu ul{
+    display: flex;
+    gap: 11px;
+}
+
+.header-bottom .nav-menu a{
+    display: inline-block;
+    padding: 50px 10px ;
+    text-transform: uppercase;
+    font-weight: 400;
+    white-space: nowrap;
+}
+.header-bottom nav a:hover{
+    background: rgba(224, 184, 71, .99);
+    transition: background .3s ease-in-out;
+}
+
+.header__burger-btn{
+    display: none;
+    width: 32px;
+    height: 32px;
+    position: relative;
+}
+
+.header__burger-btn span{
+    position: absolute;
+    width: 24px;
+    height: 3px;
+    background-color: var(--main-color);
+    left: 4px;
+    top: 14px;
+    transition: transform .3s ease-in-out;
+}
+
+.header__burger-btn span:nth-child(1){
+    transform: translateY(-7px);
+}
+
+.header__burger-btn span:nth-child(3){
+    transform: translateY(7px);
+}
+
+.header.open .header__burger-btn span:nth-child(2){
+    opacity: 0;
+}
+
+.header.open .header__burger-btn span:nth-child(1){
+    transform: rotate(45deg);
+    background-color: var(--main-color);
+}
+
+.header.open .header__burger-btn span:nth-child(3){
+    transform: rotate(-45deg);
+    background-color: var(--main-color);
+}
+.header.open{
+    position: relative;
+}
+
+@media (max-width: 800px) {
+    .header{
+        height: 85px;
+    }
+    .logo img{
+        width: 75px;
+        height: 85px;
+    }   
+    .header-logo p{
+        display: none;
+    }
+    .header__burger-btn{
+        display: block;
+    }
+    .header-top{
+        width: 100%;
+        background-color: #FFF;
+        color: var(--main-color);
+        position: absolute;
+        bottom: 100px;
+        left: -100%;
+        transition: left .3s ease-in-out;
+        z-index: 20;
+    }
+    .header-top .container{
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .contact-list{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 11px;
+    }
+
+    .contact-list .message-block{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 11px;
+    }
+    .contact-list svg path{
+        fill: var(--main-color);
+    }
+    .header-top .contact-list a{
+        gap: 8px;
+    } 
+
+    .header-bottom .nav-menu{
+        width: 100%;
+        flex-direction: column;
+        gap: 16px;
+        position: absolute;
+        top: 81px;
+        left: -100%;
+        transition: left .3s ease-in-out;
+        z-index: 15;
+        padding: 40px 50px 40px 16px;
+        font-size: 16px;
+        width: 100%;
+        background-color: #FFF;
+        justify-content: flex-start;
+    }
+    .header-bottom .nav-menu ul{
+        width: 100%;
+        flex-direction: column;
+    }
+    .header-bottom .nav-menu li{
+        width: 100%;
+    }
+    .header-bottom .nav-menu a{
+        display: inline-block;
+        width: 100%;
+        padding: 8px;
+    }
+    .header-bottom button{
+        display: none;
+    }
+
+    .header.open .header-top,
+    .header.open .header-bottom nav{
+        left: 0;
+    }
+        
+}
+
+@media (max-width: 400px) {
+    .contact-list svg{
+        flex-shrink: 0;
+    }
+}
