@@ -2,41 +2,22 @@
 const burger = document.querySelector('.header__burger-btn');
 const header = document.querySelector('.header');
 const navLink = document.querySelectorAll('.header-bottom a');
-const sections = document.querySelectorAll('section');
 
-navLink.forEach(link => {
-  link.addEventListener('click', (e) => {
-
-    sections.forEach((section) => {
-      if (link.getAttribute('href') === `#${section.id}`) {
-        section.style.paddingTop = header.clientHeight ;
-      } else {
-        section.style.paddingTop = '';
-      }
-    })
-  })
-})
 
 burger.addEventListener('click', () => {
   header.classList.toggle('open');
   if(header.classList.contains('open')) {
     document.body.style.overflowY = 'hidden';
+  } else {
+    document.body.style.overflowY = 'auto';
   }
-  navLink.forEach(item => {
-    item.addEventListener('click', () => {
-      setTimeout(() => {
-        header.classList.remove('open');
-      }, 500)
-      
-      sections.forEach((section) => {
-        if (item.getAttribute('href') === `#${section.id}`) {
-          section.style.paddingTop = 100 +'px';
-        }
-      })
+  navLink.forEach(link => {
+    link.addEventListener('click', () => {
+      header.classList.remove('open');
+      document.body.style.overflowY = 'auto';
     })
   })
 })
-
 
 // ---------------------------Слайдер----------------------------
 const swiper = new Swiper('.objects-item-imgs.swiper', {
@@ -83,8 +64,6 @@ if(inDesktop) {
   aboutSection.style.paddingBottom = 50 + 'px';
 }
 
-console.log(aboutList.clientHeight);
-console.log(aboutSection.style.paddingBottom);
 // ---------------------------Popap---------------------------
 
 const objImgs = document.querySelectorAll('.objects-item-imgs img');

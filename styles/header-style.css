@@ -3,6 +3,8 @@
 }
 .header.open{
     height: 100vh;
+    position: relative;
+    background-color: #FFF;
 }
 .header-top{
     background: rgba(38, 36, 31, 1);
@@ -39,6 +41,7 @@
 
 .header-bottom {
     background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
 }
 .header-bottom .container{
     display: flex;
@@ -51,7 +54,7 @@
     gap: 8px;
 }
 .header-logo p{
-    max-width: 339px;
+    max-width: 350px;
     padding-left: 8px;
     padding-right: 15px;
     color: rgba(19, 19, 19, 1);
@@ -84,6 +87,7 @@
     width: 32px;
     height: 32px;
     position: relative;
+    cursor: pointer;
 }
 
 .header__burger-btn span{
@@ -117,11 +121,8 @@
     transform: rotate(-45deg);
     background-color: var(--main-color);
 }
-.header.open{
-    position: relative;
-}
 
-@media (max-width: 800px) {
+@media (max-width: 860px) {
     .header{
         height: 85px;
     }

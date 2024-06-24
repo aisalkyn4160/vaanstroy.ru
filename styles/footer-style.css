@@ -49,15 +49,16 @@
 }
 .developed{
     display: flex;
-    align-items: center;
-    gap: 14px;
+    gap: 15px;
 }
-.developed span{
+.developed div {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-
+.developed div a:first-child{
+    text-decoration: underline;
+}
 @media (max-width: 970px) {
     .footer-top{
         flex-direction: column;
